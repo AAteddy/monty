@@ -7,7 +7,7 @@ int get_word_count(char *str, char *delims);
 char *get_next_word(char *str, char *delims);
 
 /**
- * str_sep_word - A function that takes a string and seperates its words
+ * strtow - takes a string and seperates its words
  *
  * @str: string to seperate into words
  * @delims: delimitors to use to delimit words
@@ -15,7 +15,7 @@ char *get_next_word(char *str, char *delims);
  * Return: 2D array of pointers to each word
  */
 
-char **str_sep_word(char *str, char *delims)
+char **strtow(char *str, char *delims)
 {
 	char **words = NULL;
 	int wc, wordLen, n, i = 0;
@@ -63,7 +63,7 @@ char **str_sep_word(char *str, char *delims)
 }
 
 /**
- * is_delim - A function that checks if stream has delimitor char
+ * is_delim - checks if stream has delimitor char
  *
  * @ch: character in stream
  *
@@ -86,7 +86,7 @@ int is_delim(char ch, char *delims)
 }
 
 /**
- * get_word_length - A function that gets the word length of cur word in str
+ * get_word_length - gets the word length of cur word in str
  *
  * @str: string to get word length from current word
  * @delims: delimitors to use to delimit words
@@ -114,7 +114,7 @@ int get_word_length(char *str, char *delims)
 }
 
 /**
- * get_word_count - A function that gets the word count of a string
+ * get_word_count - gets the word count of a string
  *
  * @str: string to get word count from
  * @delims: delimitors to use to delimit words
@@ -141,7 +141,7 @@ int get_word_count(char *str, char *delims)
 }
 
 /**
- * get_next_word - A function that gets the next word in a string
+ * get_next_word - gets the next word in a string
  *
  * @str: string to get next word from
  * @delims: delimitors to use to delimit words

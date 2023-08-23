@@ -65,19 +65,19 @@ void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
 void monty_pchar(stack_t **stack, unsigned int line_number);
 void monty_pstr(stack_t **stack, unsigned int line_number);
-void monty_rot_tb(stack_t **stack, unsigned int line_number);
-void monty_rot_bt(stack_t **stack, unsigned int line_number);
 void monty_stack(stack_t **stack, unsigned int line_number);
 void monty_queue(stack_t **stack, unsigned int line_number);
+void monty_rotl(stack_t **stack, unsigned int line_number);
+void monty_rotr(stack_t **stack, unsigned int line_number);
 
 /* CUSTOM STANDARD LIBRARY FUNCTIONS */
-char **str_sep_word(char *str, char *delims);
+char **strtow(char *str, char *delims);
 char *get_int(int n);
 
 /* ERROR MESSAGES & ERROR CODES */
 int usage_error(void);
 int malloc_error(void);
-int file_open_error(char *filename);
+int f_open_error(char *filename);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
 int pop_error(unsigned int line_number);
