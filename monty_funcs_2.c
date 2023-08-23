@@ -7,7 +7,8 @@ void monty_mul(stack_t **stack, unsigned int line_number);
 void monty_mod(stack_t **stack, unsigned int line_number);
 
 /**
- * monty_add - Adds the top two values of a stack_t linked list.
+ * monty_add - A function that adds the top two
+ *             values of a stack_t linked list.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
  *
@@ -27,7 +28,7 @@ void monty_add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_sub - Subtracts the second value from the top of
+ * monty_sub - A function that subtracts the second value from the top of
  *             a stack_t linked list by the top value.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
@@ -48,7 +49,7 @@ void monty_sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_div - Divides the second value from the top of
+ * monty_div - A function that divides the second value from the top of
  *             a stack_t linked list by the top value.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
@@ -75,8 +76,8 @@ void monty_div(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_mul - Multiplies the second value from the top of
- *             a stack_t linked list by the top value.
+ * monty_mul - A function that multiplies the second value from the
+ *             top of a stack_t linked list by the top value.
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
  *
@@ -96,8 +97,8 @@ void monty_mul(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * monty_mod - Computes the modulus of the second value from the
- *             top of a stack_t linked list  by the top value.
+ * monty_mod - A function that computes the modulus of the second
+ *             value from the top of a stack_t linked list  by the top value
  * @stack: A pointer to the top mode node of a stack_t linked list.
  * @line_number: The current working line number of a Monty bytecodes file.
  *

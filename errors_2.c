@@ -7,7 +7,7 @@ int div_error(unsigned int line_number);
 int pchar_error(unsigned int line_number, char *message);
 
 /**
- * pop_error - Prints pop error messages for empty stacks.
+ * pop_error - A function that prints pop error messages for empty stacks.
  * @line_number: Line number in script where error occured.
  *
  * Return: (EXIT_FAILURE) always.
@@ -19,7 +19,7 @@ int pop_error(unsigned int line_number)
 }
 
 /**
- * pint_error - Prints pint error messages for empty stacks.
+ * pint_error - A function that prints pint error messages for empty stacks.
  * @line_number: Line number in Monty bytecodes file where error occurred.
  *
  * Return: (EXIT_FAILURE) always.
@@ -31,8 +31,8 @@ int pint_error(unsigned int line_number)
 }
 
 /**
- * short_stack_error - Prints monty math function error messages
- *                     for stacks/queues smaller than two nodes.
+ * short_stack_error - A function that prints monty math function error
+ *                     messages for stacks/queues smaller than two nodes
  * @line_number: Line number in Monty bytecodes file where error occurred.
  * @op: Operation where the error occurred.
  *
@@ -45,7 +45,8 @@ int short_stack_error(unsigned int line_number, char *op)
 }
 
 /**
- * div_error - Prints division error messages for division by 0.
+ * div_error - A function that prints division error
+ *             messages for division by 0
  * @line_number: Line number in Monty bytecodes file where error occurred.
  *
  * Return: (EXIT_FAILURE) always.
@@ -57,8 +58,8 @@ int div_error(unsigned int line_number)
 }
 
 /**
- * pchar_error - Prints pchar error messages for empty stacks
- *               empty stacks and non-character values.
+ * pchar_error - A function that prints pchar error messages for empty stacks
+ *               empty stacks and non-character values
  * @line_number: Line number in Monty bytecodes file where error occurred.
  * @message: The corresponding error message to print.
  *

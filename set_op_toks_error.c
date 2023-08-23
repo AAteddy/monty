@@ -1,36 +1,37 @@
 #include "monty.h"
 
 /**
- * set_op_tok_error - Sets last element of op_toks to be an error code.
+ * set_op_tok_error - A function that sets last element of
+ *                    op_toks to be an error code.
  * @error_code: Integer to store as a string in op_toks.
  */
 void set_op_tok_error(int error_code)
 {
-	int toks_len = 0, i = 0;
-	char *exit_str = NULL;
-	char **new_toks = NULL;
+	char **new_tokn = NULL;
+	char *strg_exit = NULL;
+	int tokn_leng = 0, i = 0;
 
-	toks_len = token_arr_len();
-	new_toks = malloc(sizeof(char *) * (toks_len + 2));
+	tokn_leng = token_arr_len();
+	new_tokn = malloc(sizeof(char *) * (tokn_leng + 2));
 	if (!op_toks)
 	{
 		malloc_error();
 		return;
 	}
-	while (i < toks_len)
+	while (i < tokn_leng)
 	{
-		new_toks[i] = op_toks[i];
+		new_tokn[i] = op_toks[i];
 		i++;
 	}
-	exit_str = get_int(error_code);
-	if (!exit_str)
+	strg_exit = get_int(error_code);
+	if (!strg_exit)
 	{
-		free(new_toks);
+		free(new_tokn);
 		malloc_error();
 		return;
 	}
-	new_toks[i++] = exit_str;
-	new_toks[i] = NULL;
+	new_tokn[i++] = strg_exit;
+	new_tokn[i] = NULL;
 	free(op_toks);
-	op_toks = new_toks;
+	op_toks = new_tokn;
 }
