@@ -21,7 +21,7 @@ char *get_int(int num)
 	char *ret;
 
 	tmp = _abs(num);
-	len = get_numbase_len(temp, 10);
+	len = get_lenbuf_numbase(temp, 10);
 
 	if (num < 0 || numl < 0)
 		len++; /* negative sign */

@@ -87,8 +87,8 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"mod", monty_mod},
 		{"pchar", monty_pchar},
 		{"pstr", monty_pstr},
-		{"rot_tb", monty_rot_tb},
-		{"rot_bt", monty_rot_bt},
+		{"rot1", monty_rot_tb},
+		{"rotr", monty_rot_bt},
 		{"stack", monty_stack},
 		{"queue", monty_queue},
 		{NULL, NULL}
