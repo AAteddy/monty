@@ -13,8 +13,8 @@ void monty_swap(stack_t **stack, unsigned int line_number);
  */
 void monty_push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp, *new;
-	int i;
+	int j;
+	stack_t *temp, *new;
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
@@ -29,11 +29,11 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	for (i = 0; op_toks[1][i]; i++)
+	for (j = 0; op_toks[1][j]; j++)
 	{
-		if (op_toks[1][i] == '-' && i == 0)
+		if (op_toks[1][j] == '-' && j == 0)
 			continue;
-		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
+		if (op_toks[1][j] < '0' || op_toks[1][j] > '9')
 		{
 			set_op_tok_error(no_int_error(line_number));
 			return;
@@ -43,21 +43,21 @@ void monty_push(stack_t **stack, unsigned int line_number)
 
 	if (check_mode(*stack) == STACK) /* STACK mode insert at front */
 	{
-		tmp = (*stack)->next;
+		temp = (*stack)->next;
 		new->prev = *stack;
-		new->next = tmp;
-		if (tmp)
-			tmp->prev = new;
+		new->next = temp;
+		if (temp)
+			temp->prev = new;
 		(*stack)->next = new;
 	}
 	else /* QUEUE mode insert at end */
 	{
-		tmp = *stack;
-		while (tmp->next)
-			tmp = tmp->next;
-		new->prev = tmp;
+		temp = *stack;
+		while (temp->next)
+			temp = temp->next;
+		new->prev = temp;
 		new->next = NULL;
-		tmp->next = new;
+		temp->next = new;
 	}
 }
 
@@ -68,12 +68,12 @@ void monty_push(stack_t **stack, unsigned int line_number)
  */
 void monty_pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = (*stack)->next;
+	stack_t *temp = (*stack)->next;
 
-	while (tmp)
+	while (temp)
 	{
-		printf("%d\n", tmp->n);
-		tmp = tmp->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 	(void)line_number;
 }
@@ -124,7 +124,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
  */
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	stack_t *temp;
 
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
@@ -132,12 +132,12 @@ void monty_swap(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	tmp = (*stack)->next->next;
-	(*stack)->next->next = tmp->next;
-	(*stack)->next->prev = tmp;
-	if (tmp->next)
-		tmp->next->prev = (*stack)->next;
-	tmp->next = (*stack)->next;
-	tmp->prev = *stack;
-	(*stack)->next = tmp;
+	temp = (*stack)->next->next;
+	(*stack)->next->next = temp->next;
+	(*stack)->next->prev = temp;
+	if (temp->next)
+		temp->next->prev = (*stack)->next;
+	temp->next = (*stack)->next;
+	temp->prev = *stack;
+	(*stack)->next = temp;
 }
